@@ -32,16 +32,16 @@ class UsersController < ApplicationController
   end
 
   # POST /users/follows
-  def add_follows
-    @user = User.find(params[:id])
-    @follows = User.find(params[:follows_id])
-
-    if @user.follows << @follows
-      head :no_content
-    else
-      render json: @user.errors, status: :unprocessable_entity
-    end
-  end
+def add_follows
+	@user = User.find(params[:id])
+	@follows = User.find(params[:follows_id])
+	if @user.follows << @follows and @follows.followers << @user
+		head :no_content
+		render json: @user.follows
+	else
+		render json: @user.errors, status: :unprocessable_entity
+	end
+end
 
   # DELETE /users/follows/1/2
   def delete_follows
