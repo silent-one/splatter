@@ -60,4 +60,21 @@ def show
 	render json: @user
 end
 
+
+def follow(follower, followed)
+	if follower.follows
+		follower.follows << followed.email
+	else
+		follower.followed = [followed.email]
+	end
+
+	if followed.followers
+		followed.followers << follower.email
+	else
+		followed.followers = [follows.email]
+	end
+	update(followed)
+	update(follwer)
+end
+
 end
