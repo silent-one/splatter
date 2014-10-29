@@ -13,6 +13,9 @@ gem 'sqlite3'
 gem 'mongoid', github: 'mongoid/mongoid'
 gem 'bson_ext'
 
+#riak stuff
+gem 'riak-client'
+gem 'hashie'
 
 # To use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.1.2'
