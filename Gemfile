@@ -9,6 +9,8 @@ gem 'rails-api'
 # Use sqlite3 as the database for Active Record
 gem 'sqlite3'
 
+gem 'pg'
+
 #mongo stuff
 gem 'mongoid', github: 'mongoid/mongoid'
 gem 'bson_ext'
